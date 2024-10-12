@@ -29,3 +29,19 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 */
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Add JUnit for testing
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test {
+    useJUnitPlatform()
+}
