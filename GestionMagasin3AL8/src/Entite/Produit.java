@@ -3,10 +3,10 @@ package Entite;
 import java.util.Date;
 public class Produit {
 
-   private int identifiant;
+    private int identifiant;
     private String marque,libelle;
-  private   Date dateexp;
-  private double prix;
+    private   Date dateexp;
+    private double prix;
 
     public int getIdentifiant() {
         return identifiant;
