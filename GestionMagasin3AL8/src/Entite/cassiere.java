@@ -8,5 +8,10 @@ public class cassiere extends Employe{
         super(id , nom , adresse , nbr_heures);
         this.Numero_du_caisee = Numero_du_caisee ;
     }
+    
+    @Override
+    public String toString (){
+        return "ID employee : " + id + "son adresse " + adress + "nbr_heures" + nbr_heures + "Numero_du_caisse" + Numero_du_caisee ;
+    }
 
 }
