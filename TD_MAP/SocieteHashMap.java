@@ -20,18 +20,27 @@ public class SocieteHashMap implements InterfaceSociete {
 
     @Override
     public void afficherLesEmployesLeursDepartements() {
-        employeDepartementMap.forEach((employe, departement) -> 
-            System.out.println(employe + " => " + departement));
+        for (Map.Entry<Employe, Departement> entry : employeDepartementMap.entrySet()) {
+            System.out.println(entry.getKey() + " => " + entry.getValue());
+        }
     }
 
     @Override
     public void afficherLesEmployes() {
-        employeDepartementMap.keySet().forEach(System.out::println);
+        for (Employe employe : employeDepartementMap.keySet()) {
+            System.out.println(employe);
+        }
     }
 
     @Override
     public void afficherLesDepartements() {
-        employeDepartementMap.values().stream().distinct().forEach(System.out::println);
+        Map<Departement, Boolean> printed = new HashMap<>();
+        for (Departement departement : employeDepartementMap.values()) {
+            if (!printed.containsKey(departement)) {
+                System.out.println(departement);
+                printed.put(departement, true);
+            }
+        }
     }
 
     @Override
@@ -47,6 +56,11 @@ public class SocieteHashMap implements InterfaceSociete {
 
     @Override
     public boolean rechercherDepartement(Departement d) {
-        return employeDepartementMap.containsValue(d);
+        for (Departement departement : employeDepartementMap.values()) {
+            if (departement.equals(d)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
